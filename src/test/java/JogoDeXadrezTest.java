@@ -1,5 +1,7 @@
-import static org.junit.jupiter.api.Assertions.*;
-
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
 public class JogoDeXadrezTest {
@@ -26,6 +28,13 @@ public class JogoDeXadrezTest {
     public void tabuleiroEhCriado() {
         Tabuleiro tabuleiro = new Tabuleiro();
         assertNotNull(tabuleiro);
+    }
+
+    @Test
+    public void casaLivreRetornaCorretoParaCasaVaziaEPreeenchida() {
+        Tabuleiro tabuleiro = new Tabuleiro();
+        assertTrue(tabuleiro.casaLivre("A3"));
+        assertTrue(!tabuleiro.casaLivre("A2"));
     }
 
     @Test
